@@ -1,0 +1,40 @@
+##########################################################
+#
+# THIS IS the DEFAULT EBT real ORB properties
+#
+##########################################################
+vbroker.agent.enableLocator=false
+vbroker.orb.warn=2
+vbroker.orb.tcIndirection=false
+vbroker.se.iiop_tp.scm.iiop_tp.listener.port=53442
+#
+#  TURN the following on for debugging
+#
+#vbroker.orb.debug=false
+#vbroker.orb.bufferDebug=true
+#vbroker.orb.logLevel=debug
+#vbroker.poa.logLevel=debug
+javax.rmi.CORBA.UtilClass=com.inprise.vbroker.rmi.CORBA.UtilImpl
+javax.rmi.CORBA.StubClass=com.inprise.vbroker.rmi.CORBA.StubImpl
+org.omg.CORBA.ORBSingletonClass=com.inprise.vbroker.orb.ORBSingleton
+org.omg.CORBA.ORBClass=com.inprise.vbroker.orb.ORB
+javax.rmi.CORBA.PortableRemoteObjectClass=com.inprise.vbroker.rmi.CORBA.PortableRemoteObjectImpl
+vbroker.agent.port=53443
+#
+# See chapter 21 of BES 5.0 programmer manual for list of props.
+#
+# server side prop
+#
+vbroker.se.iiop_ts.scm.iiop_ts.manager.connectionMax=10
+vbroker.se.iiop_ts.scm.iiop_ts.manager.connectionMaxIdle=0
+vbroker.se.iiop_tp.scm.iiop_tp.manager.connectionMax=10
+vbroker.se.iiop_tp.scm.iiop_tp.manager.connectionMaxIdle=0
+vbroker.se.iiop_tp.scm.iiop_tp.dispatcher.threadMin=0
+vbroker.se.iiop_tp.scm.iiop_tp.dispatcher.threadMax=15
+vbroker.se.iiop_tp.scm.iiop_tp.dispatcher.threadMaxIdle=60
+#
+# client side prop (these are defaults)
+#
+vbroker.ce.iiop.ccm.connectionCacheMax=5
+vbroker.ce.iiop.ccm.connectionMax=10
+vbroker.ce.iiop.ccm.connectionMaxIdle=0
