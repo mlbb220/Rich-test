@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="jmxMBeanExport" class="org.springframework.jmx.export.MBeanExporter">
+		<property name="server">
+			<bean class="javax.management.MBeanServerFactory" factory-method="createMBeanServer"></bean>
+		</property>
+		<property name="beans">
+
+			<map>
+
+				<entry key="MyAgent:name=htmladapter,port=9092">
+					<bean class="com.sun.jdmk.comm.HtmlAdaptorServer" init-method="start">
+						<property name="port">
+							<value>9092</value>
+						</property>
+					</bean>
+				</entry>
+
+				<entry key="MyAgent:name=hello">
+					<ref bean="hello" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="hello" class="test.jmx.HelloWorld" />
+
+</beans>

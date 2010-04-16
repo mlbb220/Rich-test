@@ -1,0 +1,46 @@
+body {
+	font-size: 0.8em;
+	color: black;
+}
+
+h1 {
+	color: #ffc;
+	background-color: #009;
+}
+
+h2 {
+	font-size: 1.5em;
+	background-color: #ccc;
+	margin: 1em;
+	padding: 3em;
+}
+
+h3 {
+	border-style: dashed;
+	border-width: 3px;
+	border-left-width: 10px;
+	border-right-width: 10px;
+	border-color: red;
+}
+
+.table_test {
+	width: 400px;
+	border-style: outset;
+	border-width: 30px ;
+	text-decoration: line-through;
+	text-transform: capitalize;
+}
+
+.table_test1 td {
+	border: 1px dashed #63AE08;
+}
+
+.tr_test1 {
+	border-style: dashed;
+	border-width: 1px;
+	background: yellow;
+}
+
+.tr_test2 {
+	background: red;
+}
