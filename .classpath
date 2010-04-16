@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="bug"/>
+	<classpathentry kind="src" path="corba"/>
+	<classpathentry kind="src" path="tools"/>
+	<classpathentry kind="src" path="eppic"/>
+	<classpathentry kind="src" path="zjy"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/mx4j201_core.jar"/>
+	<classpathentry kind="lib" path="lib/mx4j201_tools.jar"/>
+	<classpathentry kind="lib" path="lib/opendmk-1.0-b02-bin-dual-01-Oct-2007_19-17-46.jar"/>
+	<classpathentry kind="lib" path="lib/jasperreports-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/junit_p4/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-core-2009-07-07_02-04-57.jar"/>
+	<classpathentry kind="lib" path="lib/vbjlm.jar"/>
+	<classpathentry kind="lib" path="lib/vbjorb.jar"/>
+	<classpathentry kind="lib" path="lib/vbsec.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JUnit_Lib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/eclipse_workspace_3.5/lib/log/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="D:/eclipse_workspace_3.5/lib/apache.common/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/tools/mysql2014.jar"/>
+	<classpathentry kind="lib" path="lib/javamail13.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/junit_p4"/>
+	<classpathentry kind="lib" path="lib/itext-1.3.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/fluiedc_dev_2010R1"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
