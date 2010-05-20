@@ -8,11 +8,13 @@ import java.io.InputStreamReader;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.junit.Test;
 
 import rich.util.TestUtil;
 
 public class TestHttlpClient {
 
+	@Test
 	public void getFromUrl(){
 		String url = "http://richnesttest.appspot.com/api/statuses/public_timeline.json";
 		HttpClient client = new HttpClient();
@@ -23,9 +25,11 @@ public class TestHttlpClient {
 			if(statecode != 200){
 				TestUtil.printLog("error with code:" + statecode);
 			}else{
-				BufferedReader is = new BufferedReader(new InputStreamReader(getMethod.getResponseBodyAsStream()));
+				BufferedReader reader = new BufferedReader(new InputStreamReader(getMethod.getResponseBodyAsStream()));
 				String line ;
-				while()
+				while((line =reader.readLine())!=null){
+					System.out.println(line);
+				}
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
