@@ -1,5 +1,7 @@
 package rich.number;
 
+import java.util.Date;
+
 import junit.framework.TestCase;
 
 /**
@@ -40,6 +42,15 @@ public class LongTest extends TestCase {
 		System.out.println("Long.MAX_VALUE based on 16 iis :"+Long.toString(Long.MAX_VALUE,18));
 	}
 
+	public void testFormatLong(){
+		String parm = "asdsadas";
+		try{
+			Date _startDate = new Date(Long.valueOf(parm));
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static String FormatDouble(double dbl, String form) {
 		java.text.NumberFormat formatter = new java.text.DecimalFormat(form);
 		String rtn = "";
