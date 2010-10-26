@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>change year</title>
+<meta http-equiv='Content-Type'    content='text/html; charset=gb2312'>
+</head>
+
+<body>
+<select name="year" id="year" onchange="yearchange()">
+<option value="">year</option>
+</select>
+<select name="month" id="month">
+<option value="">month</option>
+</select>
+<input type="button" onclick="init()" name="reset" value="reset"/>
+<script language="JavaScript">
+<!--
+var currnetYearTemp = 2010;
+var currentMonthTemp = 10;
+var needMonthTemp = 30;
+
+var needYear = 1;
+var monthInYeas = ['Jan','Feb','Mar','April','May','Jun','July','Aug','Sep','Oct','Nov','Dec'];
+
+function calcMonthes(currentMonth,needMonth){
+	var monthsNeed = new Array(needMonth);
+	var monthTemp = new Array();
+	for(var i=0,j=0,k=0;i<needMonth;i++){
+		monthTemp[j]=monthInYeas[currentMonth-1];
+		currentMonth--;
+		if(currentMonth<1&&(i<needMonth-1)){
+			monthsNeed[k]=monthTemp;
+			k++;
+			j=0;
+			needYear++;
+			monthTemp = new Array();
+			currentMonth=12;
+		}else if(currentMonth<1&&(i==needMonth-1)){
+			monthsNeed[k]=monthTemp;
+		}else if(i==needMonth-1){
+			monthsNeed[k]=monthTemp;
+		}else{
+			j++;
+		}
+	}
+	return monthsNeed;
+}
+function calcYears(currnetYear){
+	var yearsNeed = new Array(needYear);
+	for(var i=0;i<needYear;i++){
+		yearsNeed[i]=currnetYear-i;
+	}
+	return yearsNeed;
+}
+
+var monthValues=calcMonthes(currentMonthTemp,needMonthTemp);
+var yearValues=calcYears(currnetYearTemp);
+var yearSelected = 0;
+var monthSelected = 0;
+
+var year = GEId("year");
+var month = GEId("month");
+
+function GEId(sID)
+{
+	try{return document.getElementById(sID)}catch(e){};
+}
+
+function init(){
+	//init the year
+	year.options.length=yearValues.length;
+	for(var i=0;i<yearValues.length;i++){
+	year.options[i]=new Option(yearValues[i],i);
+	}
+	year.selectedIndex=yearSelected;
+
+	//init the month
+	month.options.length=monthValues[year.selectedIndex].length;
+	for(var i=0;i<monthValues[year.selectedIndex].length;i++){
+	month.options[i]=new Option(monthValues[year.selectedIndex][i],i);
+	}
+	month.selectedIndex=monthSelected;
+}
+
+//things happend when changing year
+function yearchange(){
+	month.options.length=monthValues[year.selectedIndex].length;
+	for(var i=0;i<monthValues[year.selectedIndex].length;i++){
+	month.options[i]=new Option(monthValues[year.selectedIndex][i],i);
+}
+
+}
+init();
+//-->
+</script>
+</body>
+</html>
