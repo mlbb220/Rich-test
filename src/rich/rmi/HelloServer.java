@@ -20,10 +20,12 @@ public class HelloServer implements Hello {
 		HelloServer obj = new HelloServer();
 //	    Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
 
+		UnicastRemoteObject.exportObject(obj, 1099);
+		
 	    LocateRegistry.createRegistry(1099);
 	    // Bind the remote object's stub in the registry
 	    Registry registry = LocateRegistry.getRegistry();
-	    String url = "rmi://127.0.0.1:1099/Hello";
+	    String url = "Hello";
 	    registry.rebind(url, obj);
 
 	    System.err.println("Server ready");

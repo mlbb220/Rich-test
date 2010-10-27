@@ -12,7 +12,7 @@ public class HelloClient {
 	String host = (args.length < 1) ? null : args[0];
 	try {
 	    Registry registry = LocateRegistry.getRegistry("localhost");
-	    Hello stub = (Hello) registry.lookup("rmi://127.0.0.1:1099/Hello");
+	    Hello stub = (Hello) registry.lookup("Hello");
 	    String response = stub.sayHello();
 	    System.out.println("response: " + response);
 	} catch (Exception e) {
