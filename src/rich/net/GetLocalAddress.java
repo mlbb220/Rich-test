@@ -7,10 +7,12 @@ import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
+import java.net.NetworkInterface;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownHostException;
+import java.util.Enumeration;
 
 public class GetLocalAddress {
 
@@ -28,6 +30,40 @@ public class GetLocalAddress {
 		}
 		System.out.println("host is :" + host);
 
+		System.out.println();
+		getAllHostAddresses();
+		
+		getStreamViaProxy();
+
+	}
+	
+	
+	/*
+	 * Get All the local ip addresses 
+	 */
+	private static void getAllHostAddresses(){
+		Enumeration<NetworkInterface> netInterfaces = null;  
+		try {  
+		    netInterfaces = NetworkInterface.getNetworkInterfaces();  
+		    while (netInterfaces.hasMoreElements()) {  
+		        NetworkInterface ni = netInterfaces.nextElement();  
+		        System.out.println("DisplayName:" + ni.getDisplayName());  
+		        System.out.println("Name:" + ni.getName());  
+		        Enumeration<InetAddress> ips = ni.getInetAddresses();  
+		        while (ips.hasMoreElements()) {  
+		            System.out.println("IP:"  
+		            + ips.nextElement().getHostAddress());  
+		        }  
+		    }  
+		} catch (Exception e) {  
+		    e.printStackTrace();  
+		} 
+	}
+	
+	/*
+	 * Get the URL stream via some HTTP proxy server
+	 */
+	private static void getStreamViaProxy(){
 		String proxyServer = "";
 		int proxyPort = 80;
 		try {
@@ -41,7 +77,6 @@ public class GetLocalAddress {
 			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
-			
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
