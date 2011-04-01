@@ -1,0 +1,2 @@
+#show the value "true" if b2 is in the list "CommonJars"
+IF(ISERROR(VLOOKUP(B2,CommonJars,1,FALSE)),FALSE,TRUE)
