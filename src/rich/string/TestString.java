@@ -18,4 +18,28 @@ public class TestString {
 		 System.out.println( chars.equals(chars_enUTF8));//true!
 		 String chars_enSJIS = new String(chars.getBytes("SJIS"), "SJIS");
 	}
+	
+	@Test
+	/*
+	 * for twitter. Parse the tweet
+	 */
+	public void testIndexof(){
+		String text = "I love this url at: http://www.163.com.  He is the best!";
+		System.out.println("test text is : "+ text);
+		int httpIndex = text.indexOf("http://");
+		System.out.println("index of http:// is : " + httpIndex);
+		int spaceIndex = text.indexOf(" ",httpIndex);
+		System.out.println("index of \' \' is : " + spaceIndex);
+		
+		System.out.println("url result is : " + text.substring(httpIndex,spaceIndex));
+	}
+	
+	
+	@Test
+	public void testEmpty(){
+		String test = " ";
+		
+		System.out.println("string is \""+ test +"\" and is empty?" + test.isEmpty());
+		System.out.println("string is \""+ test +"\" and trim() is empty?" + test.trim().isEmpty());
+	}
 }
